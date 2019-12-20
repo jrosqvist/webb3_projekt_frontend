@@ -1,27 +1,32 @@
 html {
     scroll-behavior: snap;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Acme', sans-serif;
 }
 
 body {
-    overflow:hidden;
+   overflow:hidden;
 }
 
 nav {
     height:50px;
-    background:rgba(0, 0, 0, 0.95);
+    background:rgba(45, 199, 127, 0.95);
+    border-bottom:4px solid #fff;
     width:100%;
     overflow:hidden;
     position:fixed;
     top:0;
     z-index:999;
+    #mainmenu {
+        float:right;
+    }
     ul {
         list-style: none;
     }
     li {
         float:left;
-        padding-left:10px;
-       line-height:50px;
+        padding-right:20px;
+        line-height:50px;
     }
     a {
         text-decoration: none;
@@ -33,44 +38,103 @@ nav {
 #fullpage {
     height:100vh;
     /* Smooth */
+    
     overflow-y: scroll;
     scroll-behavior:smooth;
     scroll-snap-type: y mandatory;
+    
 
 }
 #fullpage section {
     height:100vh; 
     scroll-snap-align: center;
-}
-h1 {
-    color:white;
-    font-size:200%;
-    line-height:100vh;
-    text-align:center;
-}
-#home {
     width:100%;
-    background-color:rgb(177, 229, 239);
-    background: url("../images/apa.jpg") no-repeat center center/cover;
+    position:relative;
+    h2 {
+        font-size:200%;
+        padding-top:150px;
+        text-align:center;
+    }
+    .fas {
+        font-size:100px;
+        position:absolute;
+        top: 25%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+
+    }
+}
+#fullpage section:nth-child(odd) {
+    background-color:rgb(240, 240, 240);
+    color:black;
+    h2 {
+        color:black;
+    }
+    .fas {
+         color:black;
+    }
+}
+#fullpage section:nth-child(even) {
+    background-color:rgb(31, 31, 31);
+    color:white;
+    h2 {
+        color:white;
+    }
+    .fas {
+        color:white;
+   }
+}
+
+#home {
+
 }
 
 #education {
-    width:100%;
-    background-color:rgb(85, 174, 194);
+
 }
 
 #portfolio {
-    width:100%;
-    background-color:rgb(94, 147, 191);
+    height:50vh;
+    .fas {
+
+   }
+   #webpages {
+       position:absolute;
+       bottom:5%;
+       left:0;
+       width:100%;
+   }
+   .webpage {
+    width:27.33333333333333%;
+    background:rgba(232, 232, 232, 0.95);
+    padding:8% 2%;
+    margin:1%;
+    display:block;
+    float:left;
+    border-radius:5px;
+    color:black;
+    h4 {
+        text-align:center;
+    }
+}
 }
 
 #work {
-    width:100%;
-    background-color:rgb(136, 192, 213);
+
 }
 
 #contact {
-    width:100%;
-    background-color:rgb(130, 120, 194);
+    background:rgba(11, 86, 51, 0.95)!important;
+    h2 {
+        color:white!important;
+    }
 }
+
+
+
+
+
+
+
 
