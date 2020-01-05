@@ -1,3 +1,5 @@
+/* Joakim Rosqvist - Mittuniversitetet - 2019 */
+
 // Skapar ett objekt som gör det möjligt att använda angiven gulp-funktionalitet
 const {src, dest, watch, series, parallel} = require("gulp");
 //Inkluderar gulp-concat och lägger i en varibel
