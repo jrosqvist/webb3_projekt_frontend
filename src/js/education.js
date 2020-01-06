@@ -2,7 +2,7 @@
 "use strict";
 
 // Lägger webbtjänst-adressen i en variabel
-const URL = "http://localhost/projekt_w3_backend/educationlist.php/education/";
+const URL = "https://studenter.miun.se/~joro1803/dt173g/projekt/backend/educationlist.php/education/";
 
 // Funktion som hämtar utbildningsposterna från webbtjänsten
 function getEducation() {
@@ -14,11 +14,11 @@ function getEducation() {
             let educationListing = "";
             // Loopar igenom datat och skriver ut alla poster
             data.forEach(function (post) {
-                educationListing += "<div class = 'education-box'><p>" + post.hie + "</p>"
-                    + "<p>" + post.name + "</p>"
-                    + "<p>" + post.credits + "</p>"
-                    + "<p>" + post.startdate + "</p>"
-                    + "<p>" + post.enddate + "</p></div>";
+                educationListing += "<div class = 'education-box'><p><i class='fas fa-university'></i>" + post.hie + "</p>"
+                    + "<p><i class='fas fa-graduation-cap'></i>" + post.name + "</p>"
+                    + "<p><i class='fas fa-award'></i>" + post.credits + " hp</p>"
+                    + "<p><i class='fas fa-calendar-alt'></i>" + post.startdate + "</p>"
+                    + "<p><i class='fas fa-calendar-check'></i>" + post.enddate + "</p></div>";
             })
             // Lägger in all text i diven output
             document.getElementById("education-listing").innerHTML = educationListing;

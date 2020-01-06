@@ -2,7 +2,7 @@
 "use strict";
 
 // Lägger webbtjänst-adressen i en variabel
-const WEBPAGEURL = "http://localhost/projekt_w3_backend/webpagelist.php/webpages/";
+const WEBPAGEURL = "https://studenter.miun.se/~joro1803/dt173g/projekt/backend/webpagelist.php/webpages/";
 
 // Funktion som hämtar webbplatserna från webbtjänsten
 function getWebpages() {
@@ -14,10 +14,10 @@ function getWebpages() {
             let webpageListing = "";
             // Loopar igenom datat och skriver ut alla kurser
             data.forEach(function (post) {
-                webpageListing += "<div class = 'webpage-box'><p>"
-                    + "<p>" + post.title + "</p>"
-                    + "<p>" + post.url + "</p>"
-                    + "<p>" + post.description + "</p></div>";
+                webpageListing += "<div class = 'webpage-box'>"
+                    + "<h4>" + post.title + "</h4>"
+                    + "<a href='" + post.url + "'target='_blank'><div class='webpage-picture'></div></a><div class ='pin'><i class='fab fa-apple'></i></div><div class ='foot'></div>"
+                    + "<p class='description-p'>" + post.description + "</p></div>";
             })
             // Lägger in all text i den rätta diven
             document.getElementById("webpage-listing").innerHTML = webpageListing;

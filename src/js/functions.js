@@ -12,5 +12,10 @@ $(document).ready(function(){
     });
 });
 
+//Stänger popupen med x-et
+// Stänger uppdateringsfönstret
+function closePopUp() {
+    document.getElementById('pop-up').style.display = "none";
+}
 
 
