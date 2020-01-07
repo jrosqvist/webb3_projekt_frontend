@@ -16,7 +16,7 @@ function getWebpages() {
             data.forEach(function (post) {
                 webpageListing += "<div class = 'webpage-box'>"
                     + "<h4>" + post.title + "</h4>"
-                    + "<a href='" + post.url + "'target='_blank'><div class='webpage-picture'></div></a><div class ='pin'><i class='fab fa-apple'></i></div><div class ='foot'></div>"
+                    + "<a href='" + post.url + "'target='_blank'><div class='webpage-picture'></div><div class ='pin'><i class='fab fa-apple'></i></div><div class ='foot'></div></a>"
                     + "<p class='description-p'>" + post.description + "</p></div>";
             })
             // Lägger in all text i den rätta diven
