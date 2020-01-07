@@ -22,7 +22,7 @@ a {
   color: $darkGray;
   color: white;
   line-height: 150%;
-  letter-spacing:0.5px;
+  letter-spacing: 0.5px;
 }
 
 h1,
@@ -32,136 +32,6 @@ h4,
 h5,
 h6 {
   font-family: "Baloo Bhai", cursive;
-}
-//Pop up
-
-#pop-up {
-  position: relative;
-  top: 200px;
-  width: 500px;
-  margin: 0 auto;
-  text-align: center;
-  z-index: 99;
-}
-#pop-up .popup-container {
-  background: $orange!important;
-  padding: 30px;
-  position: absolute;
-  top: 50px;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  box-shadow: 0 14px 28px rgba(150, 65, 65, 0.25), 0 10px 10px rgba(123, 47, 47, 0.22);
-  border-radius: 30px;
-  h4 {
-    font-size:20px;
-    margin:20px 0 10px 0;
-  }
-}
-#pop-up input,
-#pop-up textarea {
-  width: 76%;
-  padding: 2%;
-  margin: 0 10%;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: none;
-}
-#pop-up button {
-  width: 30%;
-  margin: 20px 35%;
-  background-color: $darkGray;
-  color: white;
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
-  border-radius: 5px;
-  &:hover {
-    cursor: pointer;
-    background-color: black;
-  }
-}
-
-.cross {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: $darkGray;
-  font-weight: bold;
-  font-size: 50px;
-  text-align: center;
-  &:hover {
-    cursor: pointer;
-    color: black;
-  }
-}
-
-#pop-up {
-  top: -500px;
-  animation: drop 1s ease forwards 5s;
-}
-
-@keyframes drop {
-  0% {
-    opacity: 0;
-  }
-  70% {
-    transform: translateY(700px);
-  }
-  100% {
-    transform: translateY(650px);
-    opacity: 1;
-  }
-}
-// Meny
-#mainheader {
-  height: 50px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  background-color: $darkGray;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  h2 {
-    line-height: 40px;
-    font-style: italic;
-    color: #fff;
-    float: left;
-    padding-left: 20px;
-    font-size: 50px;
-    color: white;
-    font-family: "Long Cang", cursive;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-  #main-nav {
-    float: right;
-    a {
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      padding: 12px 20px;
-      line-height: 50px;
-      color: white;
-      font-family: "Baloo Bhai", cursive;
-      // & Används för att stylea pseudo-klasser
-      &:hover {
-        background-color: $green;
-      }
-    }
-  }
-  ul li {
-    float: left;
-    display: block;
-  }
-}
-
-// Döljer mobilikonen
-#mobiler-container {
-  display: none;
-}
-#mobile-menu {
-  display: none;
 }
 
 // Container
@@ -190,140 +60,6 @@ h6 {
   content: "";
   display: block;
 }
-// SVG-animationen
-#svg-banner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: fill 2.5s ease forwards 3.3s;
-}
-
-#svg-banner path:nth-child(1) {
-  stroke-dasharray: 315.5104064941406;
-  stroke-dashoffset: 315.5104064941406;
-  animation: animation-lines 2s ease forwards;
-}
-#svg-banner path:nth-child(2) {
-  stroke-dasharray: 39.87007141113281;
-  stroke-dashoffset: 39.87007141113281;
-  animation: animation-lines 2s ease forwards 0.2s;
-}
-#svg-banner path:nth-child(3) {
-  stroke-dasharray: 333.91876220703125;
-  stroke-dashoffset: 333.91876220703125;
-  animation: animation-lines 2s ease forwards 0.4s;
-}
-#svg-banner path:nth-child(4) {
-  stroke-dasharray: 245.21694946289062;
-  stroke-dashoffset: 245.21694946289062;
-  animation: animation-lines 2s ease forwards 0.6s;
-}
-#svg-banner path:nth-child(5) {
-  stroke-dasharray: 245.28514099121094;
-  stroke-dashoffset: 245.28514099121094;
-  animation: animation-lines 2s ease forwards 0.8s;
-}
-#svg-banner path:nth-child(6) {
-  stroke-dasharray: 391.9046630859375;
-  stroke-dashoffset: 391.9046630859375;
-  animation: animation-lines 2s ease forwards 1s;
-}
-#svg-banner path:nth-child(7) {
-  stroke-dasharray: 200.963623046875;
-  stroke-dashoffset: 200.963623046875;
-  animation: animation-lines 2s ease forwards 1.2s;
-}
-#svg-banner path:nth-child(8) {
-  stroke-dasharray: 139.59674072265625;
-  stroke-dashoffset: 139.59674072265625;
-  animation: animation-lines 2s ease forwards 1.4s;
-}
-#svg-banner path:nth-child(9) {
-  stroke-dasharray: 245.28533935546875;
-  stroke-dashoffset: 245.28533935546875;
-  animation: animation-lines 2s ease forwards 1.6s;
-}
-#svg-banner path:nth-child(10) {
-  stroke-dasharray: 213.28091430664062;
-  stroke-dashoffset: 213.28091430664062;
-  animation: animation-lines 2s ease forwards 1.8s;
-}
-#svg-banner path:nth-child(11) {
-  stroke-dasharray: 124.1030044555664;
-  stroke-dashoffset: 124.1030044555664;
-  animation: animation-lines 2s ease forwards 2s;
-}
-#svg-banner path:nth-child(12) {
-  stroke-dasharray: 118.39422607421875;
-  stroke-dashoffset: 118.39422607421875;
-  animation: animation-lines 2s ease forwards 2.1s;
-}
-#svg-banner path:nth-child(13) {
-  stroke-dasharray: 104.97216033935547;
-  stroke-dashoffset: 104.97216033935547;
-  animation: animation-lines 2s ease forwards 2.2s;
-}
-#svg-banner path:nth-child(14) {
-  stroke-dasharray: 119.20111083984375;
-  stroke-dashoffset: 119.20111083984375;
-  animation: animation-lines 2s ease forwards 2.3s;
-}
-#svg-banner path:nth-child(15) {
-  stroke-dasharray: 119.2011489868164;
-  stroke-dashoffset: 119.2011489868164;
-  animation: animation-lines 2s ease forwards 2.4s;
-}
-#svg-banner path:nth-child(16) {
-  stroke-dasharray: 89.4788818359375;
-  stroke-dashoffset: 89.4788818359375;
-  animation: animation-lines 2s ease forwards 2.5s;
-}
-#svg-banner path:nth-child(17) {
-  stroke-dasharray: 71.0937728881836;
-  stroke-dashoffset: 71.0937728881836;
-  animation: animation-lines 2s ease forwards 2.6s;
-}
-#svg-banner path:nth-child(18) {
-  stroke-dasharray: 66.98796081542969;
-  stroke-dashoffset: 66.98796081542969;
-  animation: animation-lines 2s ease forwards 2.7s;
-}
-#svg-banner path:nth-child(19) {
-  stroke-dasharray: 104.9695816040039;
-  stroke-dashoffset: 104.9695816040039;
-  animation: animation-lines 2s ease forwards 2.8s;
-}
-#svg-banner path:nth-child(20) {
-  stroke-dasharray: 80.59431457519531;
-  stroke-dashoffset: 80.59431457519531;
-  animation: animation-lines 2s ease forwards 2.9s;
-}
-#svg-banner path:nth-child(21) {
-  stroke-dasharray: 107.02806091308594;
-  stroke-dashoffset: 107.02806091308594;
-  animation: animation-lines 2s ease forwards 3s;
-}
-#svg-banner path:nth-child(22) {
-  stroke-dasharray: 56.453914642333984;
-  stroke-dashoffset: 56.453914642333984;
-  animation: animation-lines 2s ease forwards 3.1s;
-}
-#svg-banner path:nth-child(23) {
-  stroke-dasharray: 125.11387634277344;
-  stroke-dashoffset: 125.11387634277344;
-  animation: animation-lines 2s ease forwards 3.2s;
-}
-#svg-banner path:nth-child(24) {
-  stroke-dasharray: 54.98870086669922;
-  stroke-dashoffset: 54.98870086669922;
-  animation: animation-lines 2s ease forwards 3.2s;
-}
-#svg-banner path:nth-child(25) {
-  stroke-dasharray: 104.97230529785156;
-  stroke-dashoffset: 104.97230529785156;
-  animation: animation-lines 2s ease forwards 3.3s;
-}
 
 // Varannan sektion
 #fullpage section:nth-child(odd) {
@@ -343,58 +79,7 @@ h6 {
     color: $darkGray;
   }
 }
-@keyframes animation-lines {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: white;
-  }
-}
-// Pilen nedåt
-#pointer i {
-  font-size: 50px;
-  color: white;
-  position: absolute;
-  bottom: 30px;
-  left: 47.5%;
-  transform: translate(-47.5%, -30px);
-  animation: bounce 3s infinite linear forwards;
-}
-@keyframes bounce {
-  0% {
-    transform: translateY(0px);
-  }
-  20% {
-    transform: translateY(20px);
-  }
-  30% {
-    transform: translateY(15px);
-  }
-  40% {
-    transform: translateY(20px);
-  }
-  60% {
-    transform: translateY(15px);
-  }
-  70% {
-    transform: translateY(10px);
-  }
-  80% {
-    transform: translateY(5px);
-  }
-  90% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
+
 .section-container {
   max-width: 960px;
   margin: 0 auto;
@@ -429,12 +114,12 @@ h6 {
   .education-box {
     display: inline-block;
     position: relative;
-    vertical-align:top;
+    vertical-align: top;
     width: 26.333333333333%;
     padding: 2.5%;
     margin: 1%;
-    margin-top:0;
-    top:2%;
+    margin-top: 0;
+    top: 2%;
     background-color: $green;
     background-color: white;
     border-radius: 5px;
@@ -451,7 +136,7 @@ h6 {
   .webpage-box {
     display: inline-block;
     position: relative;
-    vertical-align:top;
+    vertical-align: top;
     width: 26.333333333333%;
     padding: 2.5%;
     margin: 1%;
@@ -459,7 +144,6 @@ h6 {
     top: 1%;
     background-color: $green;
     border-radius: 5px;
-
   }
 
   .webpage-picture {
@@ -535,12 +219,12 @@ h6 {
   .job-box {
     display: inline-block;
     position: relative;
-    vertical-align:top;
+    vertical-align: top;
     width: 26.333333333333%;
     padding: 2.5%;
     margin: 1%;
-    margin-top:0;
-    top:2%;
+    margin-top: 0;
+    top: 2%;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 7px 14px rgba(171, 171, 171, 0.25), 0 5px 5px rgba(171, 171, 171, 0.22);
@@ -572,90 +256,9 @@ h6 {
   }
   h2 {
     padding: 20px 0 10px 0;
-    color: white!important;
+    color: white !important;
   }
 }
-#contact-form-div {
-  width: 80%;
-  background-color: $orange!important;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  box-shadow: 0 14px 28px rgba(150, 65, 65, 0.25), 0 10px 10px rgba(123, 47, 47, 0.22);
-  border-radius: 30px;
-  margin: 5% 10% 2.5% 10%;
-  h2 {
-    //color: $darkGray!important;
-    color: white;
-  }
-  #contact-form {
-    width: 90%;
-    margin: 1% 2.5%;
-    padding: 1% 2.5%;
-  }
-}
-input[type="text"],
-textarea {
-  width: 86%;
-  padding: 2%;
-  margin: 0 5%;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: none;
-}
-textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-/* Knappar */
-button {
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
-  border: none;
-  border-radius: 5px;
-  padding: 15px;
-  font-weight: bold;
-}
-.submit-button {
-  width: 30%;
-  margin: 20px 35%;
-  background-color: $darkGray;
-  color: white;
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
-  border-radius: 5px;
-  &:hover {
-    cursor: pointer;
-    background-color: black;
-  }
-}
-
-@keyframes bounce-up {
-  0% {
-    transform: translateY(0px);
-  }
-  20% {
-    transform: translateY(-20px);
-  }
-  30% {
-    transform: translateY(-15px);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-  70% {
-    transform: translateY(-10px);
-  }
-  80% {
-    transform: translateY(-5px);
-  }
-  90% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
 // MEDIA QUERIES
 @media (max-width: 800px) {
   // Designar mobilmenyn
@@ -745,7 +348,8 @@ button {
     margin: 1% 5%;
   }
 
-  #portfolio .webpage-box,#work .job-box,
+  #portfolio .webpage-box,
+  #work .job-box,
   #education .education-box {
     width: 43%;
     padding: 2.5%;
@@ -772,7 +376,7 @@ button {
     width: 65%;
     padding: 2.5%;
     margin: 1% 15%;
-    border-bottom:2px solid rgb(115, 245, 163);
+    border-bottom: 2px solid rgb(115, 245, 163);
     border-radius: 0;
   }
   #work .job-box,
