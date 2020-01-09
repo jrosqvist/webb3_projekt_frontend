@@ -1,11 +1,11 @@
 /* Joakim Rosqvist - Mittuniversitetet - 2019 */
 
 // Skapar ett objekt som gör det möjligt att använda angiven gulp-funktionalitet
-const {src, dest, watch, series, parallel} = require("gulp");
+const { src, dest, watch, series, parallel } = require("gulp");
 //Inkluderar gulp-concat och lägger i en varibel
 const concatJs = require("gulp-concat");
 // Inkluderar uglify-es och lägger i en variabel
-const uglify = require ("gulp-uglify-es").default;
+const uglify = require("gulp-uglify-es").default;
 // CSS-konkatenering
 const concatCss = require('gulp-concat-css');
 // CSS-komprimering
@@ -17,6 +17,8 @@ const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 // Sourcemaps används för att kunna se var CSS-koden kommer ifrån
 const sourcemaps = require('gulp-sourcemaps');
+// Babel används för att transpilera senare EcmaScript-kod till ES5
+const babel = require("gulp-babel");
 
 
 // Sökvägar
@@ -42,7 +44,11 @@ function htmlTask() {
 // Task som konkatenerar och minifierar js-filer
 function jsTask() {
     // Hämtar js-filer
-    return src (files.jsPath)
+    return src(files.jsPath)
+        // Aktiverar sourcemaps
+        .pipe(sourcemaps.init())
+        // Transpilerar JS-koden med Babel
+        .pipe(babel())
         // Slår ihop js-filerna till en med concat
         .pipe(concatJs("main.js"))
         // Minifierar js-filenmed uglify
@@ -77,7 +83,7 @@ function sassTask() {
         // Startar sourcemaps
         .pipe(sourcemaps.init())
         // Konverterar till Css och komrpimerar filen
-        .pipe(sass(({outputStyle: 'compressed'})).on('error', sass.logError))
+        .pipe(sass(({ outputStyle: 'compressed' })).on('error', sass.logError))
         // Skriver en mappad version
         .pipe(sourcemaps.write("."))
         // Skickar till katalogen pub
@@ -85,15 +91,15 @@ function sassTask() {
 }
 
 // Task som kopierar filer från src och pipar vidare till pub-katalogen
-function imageTask () {
-    return src (files.imagesPath)
-       .pipe(dest("pub/images"));
+function imageTask() {
+    return src(files.imagesPath)
+        .pipe(dest("pub/images"));
 }
 
 // Watch lyssnar efter förändringar
 function watchTask() {
-       // En konfigurationsfil för browser-sync skapas
-       browserSync.init({
+    // En konfigurationsfil för browser-sync skapas
+    browserSync.init({
         server: {
             baseDir: 'pub/'
         }
@@ -101,15 +107,15 @@ function watchTask() {
     // Kikar om förändringar gjorts
     watch([files.htmlPath, files.jsPath, files.sassPath, files.imagesPath],
         // Kollar efter html-, css- och js-filer samtidigt
-        parallel (htmlTask,jsTask, sassTask, imageTask)
+        parallel(htmlTask, jsTask, sassTask, imageTask)
         // Laddar om sidan när någonting förändrats
-        ).on('change', browserSync.reload);
+    ).on('change', browserSync.reload);
 }
 
 // Gör dessa funktioner publika
-exports.default = series (
+exports.default = series(
     // Dessa tre körs samtidigt
-    parallel (htmlTask, jsTask, sassTask, imageTask),
+    parallel(htmlTask, jsTask, sassTask, imageTask),
     // Sedan körs watchTask
     watchTask
 );
